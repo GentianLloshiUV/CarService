@@ -30,6 +30,10 @@ public class Main {
         System.out.println("------------------------");
         carService.allCarNames().forEach(s -> System.out.println(s));
 
+        System.out.println("------------------------");
+        System.out.println("------------------------");
+        carService.modelsWithEvenYearOfProductionStart().forEach((s, integer) -> System.out.println(s + " : " + integer));
+
 
     }
 }

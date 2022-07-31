@@ -17,9 +17,9 @@ public class CarServiceImpl implements CarService{
 
         Model model1 = new Model("Model name1", 1995, List.of(car1,car2));
         Model model2 = new Model("Model name2", 1985, List.of(car1,car2,car3));
-        Model model3 = new Model("Model name3", 1975, List.of(car4,car6));
+        Model model3 = new Model("Model name3", 1976, List.of(car4,car6));
         Model model4 = new Model("Model name4", 2005, List.of(car6,car5));
-        Model model5 = new Model("Model name5", 2015, List.of(car1,car5));
+        Model model5 = new Model("Model name5", 2014, List.of(car1,car5));
 
         allManufacturerList.add(new Manufacturer("Manufacturer name1", 1994, List.of(model1, model2)));
         allManufacturerList.add(new Manufacturer("Manufacturer name2", 2004, List.of(model3, model4)));
@@ -74,5 +74,11 @@ public class CarServiceImpl implements CarService{
     @Override
     public List<String> allCarNames() {
         return allCarList().stream().map(Car::getName).collect(Collectors.toList());
+    }
+
+    @Override
+    public Map<String, Integer> modelsWithEvenYearOfProductionStart() {
+        return allModelList().stream().filter(model -> model.getProductionStartYear() %2 == 0).distinct()
+                .collect(Collectors.toMap(model -> model.getName(),model -> model.getProductionStartYear()));
     }
 }

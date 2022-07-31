@@ -19,4 +19,8 @@ public interface CarService {
     Map<String, Integer> modelNamesAndYearOfStartingProduction();
     List<String>allCarNames();
 
+    Map<String, Integer> modelsWithEvenYearOfProductionStart();
+
+
+
 }
