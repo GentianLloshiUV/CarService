@@ -34,6 +34,9 @@ public class Main {
         System.out.println("------------------------");
         carService.modelsWithEvenYearOfProductionStart().forEach((s, integer) -> System.out.println(s + " : " + integer));
 
+        System.out.println("------------------------");
+        carService.allCarDescriptions().forEach(s -> System.out.println(s));
+
 
     }
 }

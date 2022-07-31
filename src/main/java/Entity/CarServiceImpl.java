@@ -81,4 +81,11 @@ public class CarServiceImpl implements CarService{
         return allModelList().stream().filter(model -> model.getProductionStartYear() %2 == 0).distinct()
                 .collect(Collectors.toMap(model -> model.getName(),model -> model.getProductionStartYear()));
     }
+
+    @Override
+    public List<String> allCarDescriptions() {
+        return allCarList().stream().map(Car::getDescription).collect(Collectors.toList());
+    }
+
+
 }

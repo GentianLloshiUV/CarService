@@ -21,6 +21,6 @@ public interface CarService {
 
     Map<String, Integer> modelsWithEvenYearOfProductionStart();
 
-
+    List<String>allCarDescriptions();
 
 }
